@@ -1,5 +1,3 @@
-import Web3 from "web3";
-const web3 = new Web3(Web3.givenProvider || "http://localhost8545");
 export const totalVotes = (Useraccount, txiContract) => async (
     dispatch
   ) => {
@@ -17,7 +15,7 @@ export const totalVotes = (Useraccount, txiContract) => async (
       .voted(Useraccount)
       .call()
       .then((val) => { 
-        console.log("val",val);    
+        console.log("voted",val);    
         dispatch({
           type: "HAS_VOTED",
           payload: val,
